@@ -1,0 +1,47 @@
+
+from calcHelp import get_float, get_operator
+
+
+
+def sum(a: float,b: float) -> float:
+    """returns sum of two numbers
+
+    Args:
+        a (int): first number
+        b (int): second number
+
+    Returns:
+        int: sum of two numbers
+    """
+    return a+b
+def diff(a,b):
+    return a-b
+def prod(a,b):
+    return a*b
+def div(a,b):
+    return a/b
+
+operations = {
+    '+':sum,
+    '-':diff,
+    '*':prod,
+    '/':div
+}
+
+result = None
+
+while True:
+    
+    a = result if result != None else get_float('Enter first number: ')
+    b = get_float('Enter second number: ')
+    op = get_operator('Enter operator: ', operations)
+    
+    result = operations[op](a,b)
+    
+    print(f'{a} {op} {b} = {result}')
+    
+    more = input('More calculations? (y/n) ')
+    if more == 'n':
+        break
+    
+    
