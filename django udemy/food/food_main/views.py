@@ -2,10 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Item
 from django.core import serializers
+from django.template import loader
 
 def index(request):
-    return JsonResponse({"message": "Hello from food_main"})
+    item_list = Item.objects.all()
+    context = {'item_list': item_list}
+    # template = loader.get_template('food_main/index.html')
+    # return HttpResponse(template.render(context, request))
+    return render(request, 'food_main/index.html', context)
 
+def details(request, item_id):  
+    food = Item.objects.get(pk=item_id)
+    return render(request, 'food_main/details.html', {'food': food})
 
 def items1(request):
     items_list = Item.objects.all()

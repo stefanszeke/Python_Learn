@@ -1,0 +1,24 @@
+.box-container {
+    margin: 20px auto;
+    max-width: 600px;
+    display: grid;
+    gap: 15px   ;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover .item {
+    scale: 0.98;
+    box-shadow:  0 4px 8px 6px rgba(0, 0, 0, 0.2);
+}
+
+.item {
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 5px;
+    padding-left: 20px;
+}
+

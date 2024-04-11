@@ -1,0 +1,25 @@
+{% extends 'food_main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>{{ food.item_name }}Detail</title>
+  </head>
+
+  
+  <body>
+    {% block body %}
+
+    <div class="box-container">
+      <h2>{{ food.item_name }}</h2>
+      <p>{{ food.item_desc }}</p>
+      <p>price: {{ food.item_price }} €</p>
+
+      <a href="{% url 'food_main:index' %}">
+        <button>Back</button>
+      </a>
+    </div>
+    
+    {% endblock %}
+  </body>
+</html>

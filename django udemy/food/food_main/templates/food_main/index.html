@@ -1,0 +1,30 @@
+{% extends 'food_main/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Food main</title>
+</head>
+
+<body>
+
+    {% block body %}
+
+
+    <h1>This is a Food template</h1>
+
+    <div class="box-container">
+        {% for item in item_list %}
+        <a href="{% url 'food_main:details' item.id %}">
+            <div class='item'>
+                <h3>{{ item.item_name }}</h3>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
